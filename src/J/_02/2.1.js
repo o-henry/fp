@@ -1,11 +1,11 @@
 "use strict";
 class Person {
-    constructor(firstname, lastname, ssn) {
+    constructor(firstname, lastname, ssn, birthYear = 0, address = "") {
         this._firstname = firstname;
         this._lastname = lastname;
         this._ssn = ssn;
-        this._address = null;
-        this._birthYear = null;
+        this._address = address;
+        this._birthYear = birthYear;
     }
 
     get ssn() {
@@ -28,12 +28,26 @@ class Person {
         return this._birthYear;
     }
 
+    get fullname() {
+        return `${this._firstname} ${this._lastname}`;
+    }
+
     set birthYear(year) {
         this._birthYear = year;
     }
 
     set address(addr) {
         this._address = addr;
+    }
+
+    set lastname(lastname) {
+        return new Person(
+            this._firstname,
+            lastname,
+            this._ssn,
+            this._address,
+            this._birthYear
+        );
     }
 
     toString() {
@@ -83,3 +97,5 @@ class Student extends Person {
 
 const curry = new Student("Haskell", "Curry", "111-11-1111", "Penn State");
 const turing = new Student("Alan", "Turing", "222-22-2222", "Princeton");
+
+export { Person };
