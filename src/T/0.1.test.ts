@@ -10,6 +10,7 @@ describe("THE TWO PILLARS OF FP", () => {
     });
 
     it("Non referential transparency", () => {
+        // 참조 투명성은 예외를 두지 않는다.
         const inverse = (n: number): number => {
             if (n === 0) throw new Error("cannot divide by zero");
             return 1 / n;
@@ -19,7 +20,7 @@ describe("THE TWO PILLARS OF FP", () => {
     });
 
     it("RT requires the immutable data", () => {
-        const xs = [1, 2, 3];
+        const xs = [1, 2, 3]; // mutable data
 
         const append = (xs: Array<number>): void => {
             xs.push(4);
@@ -27,7 +28,7 @@ describe("THE TWO PILLARS OF FP", () => {
 
         append(xs);
 
-        expect(xs).toEqual([1, 2, 3, 4]);
+        expect(xs).toEqual([1, 2, 3, 4]); // we can't relpace xs to [1,2,3]
     });
 });
 

@@ -2,6 +2,7 @@
     "compilerOptions": {
         "target": "es2017",
         "types": ["node", "jest"],
+        "lib": ["dom"],
         "allowJs": true,
         "skipLibCheck": true,
         "esModuleInterop": true,
@@ -17,5 +18,5 @@
         "outDir": "./build"
     },
     "compileOnSave": true,
-    "include": ["."]
+    "include": ["./src"]
 }
