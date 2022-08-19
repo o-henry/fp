@@ -1,5 +1,5 @@
 <p align="center">
     <samp>
-        FP-TS - GIULIO CANTI
+        GROKKING FUNCTIONAL PROGRAMMING 
     </samp>
 </p>
