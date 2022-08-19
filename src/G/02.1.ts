@@ -10,10 +10,8 @@ class RE_ShoppingCart {
     }
 
     public get_discount_percentage(): number {
-        /* 수학적 함수는 하나의 인풋에 하나의 아웃풋을 반환한다. */
-        const has_book: boolean = _.includes(this.items, "Book");
-        if (!has_book) return 0;
-        return 5;
+        /* avoid to use if/else statement */
+        return _.includes(this.items, "Book") ? 5 : 0;
     }
 
     public get_item(): string[] {
