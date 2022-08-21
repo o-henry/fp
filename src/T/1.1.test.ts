@@ -5,6 +5,7 @@ describe("🚀 composition", () => {
     //   interface Magma<A> {
     //     readonly concat: (x: A, y: A) => A
     //   }
+
     const magma_sub: Magma<number> = {
         concat: (first, second) => first - second,
     };
@@ -23,8 +24,6 @@ describe("🚀 composition", () => {
 
     it("Semigroup", () => {
         // (x * y) * z = x * (y * z)
-        // concat(concat(a, b), c)) = concat(a, concat(b, c))
-        // expect(magma_sub.concat(magma_sub.concat(1, 2), 3));
     });
 });
 

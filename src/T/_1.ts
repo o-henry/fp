@@ -14,6 +14,12 @@ import * as N from "fp-ts/number";
  */
 
 [1].concat([2]); // [1, 2]
+/**
+ * Magma의 정의를 인터페이스로 표현
+ * a set or type(A)
+ * a concat operation
+ * no laws to obey
+ */
 interface Magma<A> {
     readonly concat: (first: A, second: A) => A;
 }

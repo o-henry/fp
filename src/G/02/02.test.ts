@@ -2,7 +2,7 @@ import _ from "lodash";
 import { ShoppingCart } from "./02";
 import { RE_ShoppingCart } from "./02.1";
 
-describe("cart", () => {
+describe("TEST_CART", () => {
     /**
      * bad test style*
      * 테스트 나눌필요가 있으나 간단하게 하기 위해 생략
@@ -48,16 +48,6 @@ describe("cart", () => {
 
     it("test_discount_rate_with_more_functional_code", () => {
         const cart = new RE_ShoppingCart();
-
-        cart.add_item("Lemon");
-        cart.add_item("Book");
-
-        expect(cart.get_discount_percentage()).toBe(5);
-
-        cart.add_item("Book");
-        cart.remove_item("Book");
-
-        expect(cart.get_discount_percentage()).toBe(5);
     });
 });
 

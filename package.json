@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "repository": "https://github.com/o-henry/fp.git",
-    "author": "henry <cksgod16@gmail.com>",
+    "author": "henry <c.henry.9209@gmail.com>",
     "license": "MIT",
     "scripts": {
         "test": "jest --watch"
@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "fp-ts": "^2.12.2",
+        "immer": "^9.0.15",
         "immutable": "^4.1.0",
         "lodash": "^4.17.21",
         "ramda": "^0.28.0",
