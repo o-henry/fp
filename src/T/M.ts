@@ -3,8 +3,6 @@
  */
 
 import { Semigroup } from "fp-ts/lib/Semigroup";
-import * as S from "fp-ts/Semigroup";
-import * as N from "fp-ts/number";
 
 /**
  * composition
@@ -28,7 +26,4 @@ const semigroup_all: Semigroup<string> = {
     concat: (first, second) => first + second,
 };
 
-const sum = S.concatAll(N.SemigroupSum)(2);
-console.log(sum([1, 2, 3, 4])); // 12
-
-export {};
+export type { Magma };

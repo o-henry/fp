@@ -13,9 +13,5 @@ const Book: book_companion_obj = {
     },
 };
 
-let books: book[] = [
-    Book.from("FP in Scala", ["Chiusano", "Bjarnason"]),
-    Book.from("The Hobbit", ["Tolkien"]),
-];
-
-export {};
+export { Book };
+export type { book };

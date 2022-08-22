@@ -2875,6 +2875,11 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
+rambda@^7.2.1:
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/rambda/-/rambda-7.2.1.tgz#c533f6e2def4edcd59f967df938ace5dd6da56af"
+  integrity sha512-Wswj8ZvzdI3VhaGPkZAxaCTwuMmGtgWt7Zxsgyo4P+iTmVnkojvyWaOep5q3ZjMIecW0wtQa66GWxaKkZ24RAA==
+
 ramda@^0.28.0:
   version "0.28.0"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.28.0.tgz#acd785690100337e8b063cab3470019be427cc97"
