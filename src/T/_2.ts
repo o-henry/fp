@@ -1,3 +1,5 @@
+import { struct } from "fp-ts";
+
 interface Eq<A> {
     /** retrun `true` if `x` is equal to `y` */
     readonly equals: (x: A, y: A) => boolean;
