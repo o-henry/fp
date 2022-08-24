@@ -1990,6 +1990,11 @@ find-up@^4.0.0, find-up@^4.1.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
+folktale@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/folktale/-/folktale-2.3.2.tgz#38231b039e5ef36989920cbf805bf6b227bf4fd4"
+  integrity sha512-+8GbtQBwEqutP0v3uajDDoN64K2ehmHd0cjlghhxh0WpcfPzAIjPA03e1VvHlxL02FVGR0A6lwXsNQKn3H1RNQ==
+
 fp-ts@^2.12.2:
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.12.2.tgz#a191db2dbbb04f48a0e75050b94f57cc876c7b40"
