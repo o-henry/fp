@@ -1,30 +1,33 @@
 /**
  * containerization
- * wrapper의 기능이 불안전한 값을 감싸는 것이라면 예외처리가 필요한 부분에 대해서 항상 wrapper를 고려하면 되는건지
- *
- * 불안전한 값(에러가 날지 모르는 값) -> Wrapping
+ * 값을 컨테이너화 하는 행위는 FP의 기본 디자인 패턴이다.
+ * 값에 대한 직접적인 접근을 차단함으로써 값을 안전하게 다루고 불변성을 유지할 수 있다.
  **/
-class Wrapper<T> {
+class W<T> {
     constructor(private value: T) {
         this.value = value;
     }
 
     // map :: (A -> B) -> A -> B
-    map(f: (A: T) => T) {
-        return f(this.value);
+    /**
+     * map이 반환하는 타입인 B를 먼저 추상화 하고(U)
+     * (A -> B) -> A 함수의 경우 T -> U로 변환되는 과정을 표현하고
+     */
+    map<U>(f: (A: T) => U): U {
+        return <U>f(this.value);
     }
 
-    // fmap :: (A -> B) -> Wrapper[A] -> Wrapper[B]
-    fmap(f: (A: T) => Wrapper<T>) {
-        return new Wrapper(f(this.value));
+    // fmap :: (A -> B) -> W[A] -> W[B]
+    fmap<U>(f: (A: T) => U): W<U> {
+        return new W<U>(f(this.value));
     }
 
-    toString(value: T) {
-        return `Wrapper (${value})`;
+    toString() {
+        return `W (${this.value})`;
     }
 }
 
-export { Wrapper };
+export { W };
 
 /**
  * <function-name> :: <inputs*> -> <output>

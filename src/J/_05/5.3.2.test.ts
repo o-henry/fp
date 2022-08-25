@@ -8,10 +8,10 @@ class Wrapper<T> {
     }
 
     fmap<U>(f: (A: T) => U): Wrapper<U> {
-        return Wrapper.of(f(this.value));
+        return Wrapper<U>.of(f(this.value));
     }
 
-    join(): any {
+    join(): Wrapper<T> | T {
         if (!(this.value instanceof Wrapper)) {
             return this;
         }
@@ -33,8 +33,6 @@ describe("Monad", () => {
             .fmap(R.toUpper)
             .fmap(R.identity)
             .to_string();
-
-        console.log(ret);
     });
 });
 

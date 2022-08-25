@@ -5,7 +5,6 @@
  * concat(concat(a, b), c) === concat(a, concat(b, c))
  */
 
-import { Magma } from "./M";
 import { Semigroup } from "fp-ts/Semigroup";
 import * as N from "fp-ts/number";
 

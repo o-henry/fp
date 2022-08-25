@@ -68,4 +68,6 @@ const _map = (transform) => (items) => items.map(transform);
 const _join = (separator) => (items) => items.join(separator);
 const __show_names = compose(_join(", "), _map(_upcase));
 
+const Maybe = require("folktale/maybe");
+
 export {};
