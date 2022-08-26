@@ -15,7 +15,8 @@
         "isolatedModules": true,
         "baseUrl": ".",
         "noFallthroughCasesInSwitch": true,
-        "outDir": "./build"
+        "outDir": "./build",
+        "typeRoots": ["./node_modules/@types", "./**/*.d.ts"]
     },
     "compileOnSave": true,
     "include": ["./src"]

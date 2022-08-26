@@ -25,4 +25,10 @@ const follower: User = { id: 3, name: "Marsha J. Joslyn", followers: [] };
 
 console.log(_add_follower(follower)(user));
 
+describe("currying", () => {
+    it("should lazy", () => {
+        console.log(_add_follower(user)(follower));
+    });
+});
+
 export {};
