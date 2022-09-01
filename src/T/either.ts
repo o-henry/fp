@@ -1,27 +1,66 @@
-// f': X ⟶ Option(Y)
-interface None {
-    readonly _tag: "None";
+import { pipe } from "fp-ts/lib/function";
+
+/** failure */
+export interface Left<E> {
+    readonly _tag: "Left";
+    readonly left: E;
 }
 
-interface Some<A> {
-    readonly _tag: "Some";
-    readonly value: A;
+/** success */
+export interface Right<A> {
+    readonly _tag: "Right";
+    readonly right: A;
 }
 
-type Option<A> = None | Some<A>;
+export type Either<E, A> = Left<E> | Right<A>;
 
-const none: Option<never> = { _tag: "None" };
-const some = <A>(value: A): Option<A> => ({ _tag: "Some", value });
-const match =
-    <R, A>(onNone: () => R, onSome: (a: A) => R) =>
-    (fa: Option<A>): R => {
+export const left = <E, A>(left: E): Either<E, A> => ({ _tag: "Left", left });
+export const right = <E, A>(right: A): Either<E, A> => ({
+    _tag: "Right",
+    right,
+});
+export const match =
+    <E, R, A>(onLeft: (left: E) => R, onRight: (right: A) => R) =>
+    (fa: Either<E, A>): R => {
         switch (fa._tag) {
-            case "None":
-                return onNone();
-            case "Some":
-                return onSome(fa.value);
+            case "Left":
+                return onLeft(fa.left);
+            case "Right":
+                return onRight(fa.right);
         }
     };
 
-export { some, none, match };
-export type { Option };
+declare function readFile(
+    path: string,
+    callback: (err?: Error, data?: string) => void
+): void;
+
+readFile("./any_file", (err, data) => {
+    let message: string;
+    /* we have to check the value(err, data) is undefiend or null */
+    if (err != undefined) {
+        message = `Error ${err.message}`;
+    } else if (data != undefined) {
+        message = `Data ${data.trim()}`;
+    } else {
+        message = "The impossible happended";
+    }
+
+    console.log(message);
+});
+
+declare function _readFile(
+    path: string,
+    callback: (result: Either<Error, string>) => void
+): void;
+
+_readFile("./any_file", (e) => {
+    pipe(
+        e,
+        match(
+            (err) => `Error: ${err.message}`,
+            (data) => `Data: ${data.trim()}`
+        ),
+        console.log
+    );
+});

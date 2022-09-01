@@ -1,5 +1,5 @@
 import { pipe } from "fp-ts/lib/function";
-import { some, none, Option, match } from "./either";
+import { some, none, Option, match } from "./option";
 
 const head = <A>(as: ReadonlyArray<A>): Option<A> =>
     as.length === 0 ? none : some(as[0]);
