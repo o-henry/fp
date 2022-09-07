@@ -11,6 +11,6 @@ declare function save_amount(eur: EUR): void;
 
 describe("newtype", () => {
     it("should check the new_type", () => {
-        save_amount(0.85); //  Argument of type 'number' is not assignable to parameter of type 'EUR'.
+        // save_amount(0.85); //  Argument of type 'number' is not assignable to parameter of type 'EUR'.
     });
 });
