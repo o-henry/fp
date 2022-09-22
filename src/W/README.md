@@ -7,5 +7,8 @@
         <br/>
         <br/>
         https://dev.to/mikeskoe/algebraic-data-type-adt-with-typescript-f3p
+        <br/>
+        <br/>
+        https://tech.onepredict.ai/4d9f807b-12ae-40ac-a828-0390ee5e21ea
     </samp>
 </p>
