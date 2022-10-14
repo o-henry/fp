@@ -1,17 +1,20 @@
-/**
- * https://github.com/Microsoft/TypeScript/issues/202
- * https://github.com/microsoft/TypeScript/pull/33290
- * https://github.com/microsoft/TypeScript/pull/33038
- */
+// wrong fail
+type Age = number & { readonly __brand: "positive_age" };
+const validate_age = (n: number) => n > 0 && n < 120;
 
-declare const isInteger: unique symbol;
-declare const isFinite: unique symbol;
-export type finite = number & { readonly [isFinite]: true };
-export type integer = finite & { readonly [isInteger]: true };
+function person(name: string, age: Age): Person {
+    return { name, age };
+}
 
-export const numberIsFinite = (n: unknown): n is finite =>
-    typeof n === "number" && Number.isFinite(n);
-export const numberIsInteger = (n: unknown): n is integer =>
-    typeof n === "number" && Number.isInteger(n);
+let age = validate_age(99);
+let age2 = validate_age(130);
+let age4 = validate_age(-30);
+
+console.log(`Person : ${person("henry", age2)}`);
+
+interface Person {
+    name: string;
+    age: Age;
+}
 
 export {};

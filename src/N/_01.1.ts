@@ -16,4 +16,6 @@ function assertsPositiveNumber(value: number): asserts value is PositiveNumber {
     if (value < 0) throw new Error("Value must be a positive number");
 }
 
+assertsPositiveNumber(23);
+
 export {};

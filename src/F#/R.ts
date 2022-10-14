@@ -9,7 +9,11 @@ import { Option, some, none } from "fp-ts/Option";
  */
 
 type Ipt = { name: string };
+
 let name_50 = (arg: Ipt): Option<Ipt> =>
     arg.name.length > 50 ? some(arg) : none;
+
+// declare const _name_50: (arg: Ipt) => Option<Ipt>;
+// declare const _flatten: <A>(mma: ReadonlyArray<ReadonlyArray<A>>) => ReadonlyArray<A>;
 
 export {};

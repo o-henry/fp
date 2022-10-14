@@ -1,3 +1,4 @@
+import { option } from "fp-ts";
 import { Option, none, some } from "fp-ts/Option";
 
 export interface NonEmptyStringBrand {
@@ -42,3 +43,5 @@ const good_name = makeNonEmptyString("Henry");
 const bad_name = makeNonEmptyString("");
 const good_age = makeInt(45);
 const bad_age = makeInt(-1.2);
+
+// option.chain(good_name, name => option.map(good_age, age => person(name, age) ))

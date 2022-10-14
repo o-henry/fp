@@ -1,6 +1,7 @@
 /**
  *  branded type = opaque type = nominal type
  *  https://dev.to/andersonjoseph/typescript-tip-safer-functions-with-branded-types-14o4
+ *  https://medium.com/@KevinBGreene/surviving-the-typescript-ecosystem-branding-and-type-tagging-6cf6e516523d
  * */
 
 export interface Post {

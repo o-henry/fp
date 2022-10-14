@@ -9,6 +9,12 @@
         https://dev.to/mikeskoe/algebraic-data-type-adt-with-typescript-f3p
         <br/>
         <br/>
-        https://tech.onepredict.ai/4d9f807b-12ae-40ac-a828-0390ee5e21ea
+        https://tech.onepredict.ai/4d9f807b-12ae-40ac-a828-0390ee5e21eia
+        <br/>
+        <br/>
+        https://svitla.com/blog/functional-programming-in-typescript
+        <br />
+        <br />
+        https://www.bam.tech/article/domain-driven-design-how-to-define-and-validate-a-domain-with-typescript
     </samp>
 </p>
