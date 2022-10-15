@@ -1,3 +1,4 @@
+/** Opaque Branded Nominal type */
 import { Option, none, some } from "fp-ts/Option";
 
 declare const UserName: unique symbol;
@@ -7,11 +8,13 @@ function createUserName({ name }: { name: string }): Option<UserName> {
 }
 
 let user_name: Option<UserName> = createUserName({ name: "henry" });
-// let not_user_name: UserName = "Hello, world!"; <- Error!
+// let not_user_name: UserName = "Hello, world!"; // <- Error!
 
 declare const Int: unique symbol;
 type Int = number & { _: typeof Int };
-const isInt = (n: number): n is Int => Number.isInteger(n) && n >= 0;
+export const isInt = (n: number): n is Int => Number.isInteger(n) && n >= 0; // reusable
+const makeInt = (n: number): Option<Int> => (isInt(n) ? some(n) : none);
+// let user_age: Int = makeInt(32); // <- Error!
 
 class User {
     /* ... */
@@ -20,7 +23,7 @@ class User {
         this.age = age;
     }
 
-    // static create(username: UserName, age: Int): {};
+    // static create(username: string, age: Int): User {}
 
     createUserName(name: string): Option<UserName> {
         return /^[a-zA-Z0-9_-]+$/.test(name) ? some(name as UserName) : none;

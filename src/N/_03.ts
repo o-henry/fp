@@ -18,7 +18,4 @@ function euroToUsd(euro: EUR): USD {
 
 console.log(`USD: ${euroToUsd(eur)}`);
 
-declare const currencyTag: unique symbol;
-type Currency = number & { readonly [currencyTag]: true };
-
 export {};

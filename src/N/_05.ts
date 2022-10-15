@@ -1,20 +1,12 @@
-// wrong fail
-type Age = number & { readonly __brand: "positive_age" };
-const validate_age = (n: number) => n > 0 && n < 120;
+import { Option, none, some } from "fp-ts/Option";
 
-function person(name: string, age: Age): Person {
-    return { name, age };
-}
+declare const Int: unique symbol;
+type Int = number & { _: typeof Int };
 
-let age = validate_age(99);
-let age2 = validate_age(130);
-let age4 = validate_age(-30);
+const makeInt = (n: number): Option<Int> =>
+    Number.isInteger(n) && n >= 0 ? some(n as Int) : none;
 
-console.log(`Person : ${person("henry", age2)}`);
-
-interface Person {
-    name: string;
-    age: Age;
-}
+// let user_age: Option<Int> = 32; // <- Error!
+// let user_wrong_age: Option<Int> = makeInt(-429); // <- Error! but IDE don' know
 
 export {};

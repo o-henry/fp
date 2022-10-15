@@ -19,4 +19,6 @@ const validatePassword = (input: string) => {
 const user1: User = { name: "user1", password: validatePassword("12345678") };
 const user2: User = { name: "user1", password: validatePassword("1234") };
 
+const pwd: Password = validatePassword("abse");
+
 export {};
