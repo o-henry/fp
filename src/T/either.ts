@@ -30,6 +30,7 @@ export const match =
         }
     };
 
+// signature
 declare function readFile(
     path: string,
     callback: (err?: Error, data?: string) => void
@@ -49,14 +50,15 @@ readFile("./any_file", (err, data) => {
     console.log(message);
 });
 
+// signature readFile :: (path, cb) -> void
 declare function _readFile(
     path: string,
     callback: (result: Either<Error, string>) => void
 ): void;
 
-_readFile("./any_file", (e) => {
+_readFile("./any_file", (res) => {
     pipe(
-        e,
+        res,
         match(
             (err) => `Error: ${err.message}`,
             (data) => `Data: ${data.trim()}`
